@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './UserInfoCart.css'
 import userPic from '../../../../img/user pic.jpg'
@@ -7,14 +7,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 
-const UserInfoCart = ({ newCart, chart}) => {
-    // console.log(props);
-    console.log(newCart);
+const UserInfoCart = ({ newCart, chart, newTime }) => {
+    // console.log(chart);
+    // console.log(newCart);
+    // console.log(newTime);
     
-    // let total = 0;
-    // for (const allChart of newCart) {
-    //     total = total + newCart.Time_Required;
-    // }
+    const [chart, setChart] = useState([]);
+    const [time, setTime] = useState([]);
+
+
+    let total = 0;
+    for (const chart of newCart) {
+        total = total + newCart.Time_Required;
+        setChart(total)
+    }
+
+    const restTimeClick = (time) => {
+        const newTime = [...time, time];
+        setTime(newTime);
+        console.log(newTime);
+    };
     return (
         <div className="cart-contain">
             <div className='mt-4 d-flex align-items-center justify-content-center'>
@@ -36,8 +48,9 @@ const UserInfoCart = ({ newCart, chart}) => {
             {/* add a Take Rest break */}
             <div className='shadow-lg p-3 mb-5 badge text-bg-secondary ms-4'>
                 <p className='fw-bold '>Take Rest</p>
-                <button type="button" className="m-1 btn btn-outline-warning badge text-bg-warning bs-btn-font-size: .75rem;">
-                    2mnt
+                <button type="button" className="m-1 btn btn-outline-warning badge text-bg-warning bs-btn-font-size: .75rem;"
+                onClick={() => restTimeClick(newTime)}
+                >2mnt
                 </button>
                 <button type="button" className="m-1 btn btn-outline-warning badge text-bg-warning bs-btn-font-size: .75rem;">
                     4mnt
@@ -53,13 +66,12 @@ const UserInfoCart = ({ newCart, chart}) => {
 
             <div className='shadow-lg p-3 mb-5 badge text-bg-secondary ms-4' >
                 <p className='fw-bold '><span className='text-bg-warning'>Exercise Details-</span></p>
-                <p className='fw-bold '>Take Rest Time :<span className='text-bg-warning'>Exercise Details-</span></p>
-                <p className='fw-bold '>Exercise Time :<span className='text-bg-warning'>Exercise Details-</span></p>
+                <p className='fw-bold '>Take Rest Time :<span className='text-bg-warning'>Rest Time{newTime}</span></p>
+                <p className='fw-bold '>Exercise Time :<span className='text-bg-warning'>Exercise Time{ total}</span></p>
             </div>
             <div className='d-grid'>
                 <button
-                    // onClick={() => handleAddToCartClick(chart)}
-                    className="btn-car btn btn-success w-4 d-flex align-items-center justify-content-center"
+                    className="btn-car btn btn-primary w-4 d-flex align-items-center justify-content-center"
                 >
                     <p className="px-3 fw-bolder pt-2 btn-tex">Target Completed</p>
                     <FontAwesomeIcon icon={faThumbsUp}></FontAwesomeIcon>
