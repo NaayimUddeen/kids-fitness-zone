@@ -1,29 +1,51 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './UserInfoCart.css'
-// import img from "../../img/user_profile_pic-removebg-preview.png"
+import userPic from '../../../../img/user pic.jpg'
 
-const UserInfoCart = ({cart}) => {
+const UserInfoCart = ({ cart }) => {
     return (
         <div className="cart-contain">
-            <div>
-                <h1>this is cart: { }</h1>
-                <p>{cart.length}</p>
+            <div className='mt-4 d-flex align-items-center justify-content-center'>
+                <img className='user-pic img-fluid' src={userPic} alt="" />
+                <h3>Name : Kelvin Clain</h3>
             </div>
-            {/* <div className=''>
-                <img src={img} alt="" />
-                <h3>Name :</h3>
-            </div>
-            <div className=''>
+            {/* information */}
+            <div className=' m-2 p-2 d-flex align-items-center justify-content-center'>
                 <div>
-                    <p ><small>kg</small></p>
+                    <p ><small><span class="shadow-lg badge rounded-pill text-bg-primary">Weight: 75 kg</span></small></p>
                 </div>
                 <div>
-                    <p>65</p>
-                    <p>Weight</p>
+                    <p ><small><span class="shadow-lg badge rounded-pill text-bg-primary">Height: 4.6 inch</span></small></p>
                 </div>
+                <div>
+                    <p ><small><span class="shadow-lg badge rounded-pill text-bg-primary">Age: 11 year</span></small></p>
+                </div>
+            </div>
+            {/* add a Take Rest break */}
+            <div className='shadow-lg p-3 mb-5 badge text-bg-secondary ms-4'>
+                <p className='fw-bold '>Take Rest</p>
+                <button type="button" className="m-1 btn btn-outline-warning badge text-bg-warning bs-btn-font-size: .75rem;">
+                    2mnt
+                </button>
+                <button type="button" className="m-1 btn btn-outline-warning badge text-bg-warning bs-btn-font-size: .75rem;">
+                    4mnt
+                </button>
+                <button type="button" className="m-1 btn btn-outline-warning badge text-bg-warning bs-btn-font-size: .75rem;">
+                    6mnt
+                </button>
+                <button type="button" className="m-1 btn btn-outline-warning badge text-bg-warning bs-btn-font-size: .75rem;">
+                    10mnt
+                </button>
+            </div>
+            {/* Exercise Details */}
 
-            </div> */}
+            <div className='shadow-lg p-3 mb-5 badge text-bg-secondary ms-4' >
+                <p className='fw-bold '><span className='text-bg-warning'>Exercise Details-</span></p>
+                <p className='fw-bold '>Take Rest Time :<span className='text-bg-warning'>Exercise Details-</span></p>
+                <p className='fw-bold '>Exercise Time :<span className='text-bg-warning'>Exercise Details-</span></p>
+            </div>
+
         </div>
     );
 };

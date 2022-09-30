@@ -30,14 +30,12 @@ const ActivitiesChart = ({ chart, handleAddToCartClick }) => {
                             >
                                 <p className="px-3 fw-bolder pt-2 btn-tex">Add to Card</p>
                                 <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
-                                {/* <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon> */}
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     );
 };
 

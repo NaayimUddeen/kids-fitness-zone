@@ -3,3 +3,9 @@
     /* justify-content: center; */
     /* margin-top: 0px; */
 }
+.user-pic{
+    height: 120px;
+    width: 100px;
+    border-radius: 40%;
+
+}
