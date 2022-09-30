@@ -7,13 +7,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 
-const UserInfoCart = ({ cart }) => {
-    console.log(cart);
+const UserInfoCart = ({ newCart, chart}) => {
+    // console.log(props);
+    console.log(newCart);
     
-    let total = 0;
-    for (const newCart of cart) {
-        total = total + cart.Time_Required;
-    }
+    // let total = 0;
+    // for (const allChart of newCart) {
+    //     total = total + newCart.Time_Required;
+    // }
     return (
         <div className="cart-contain">
             <div className='mt-4 d-flex align-items-center justify-content-center'>

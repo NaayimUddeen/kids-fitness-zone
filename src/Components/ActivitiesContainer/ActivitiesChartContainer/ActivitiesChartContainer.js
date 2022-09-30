@@ -2,26 +2,29 @@ import React, { useEffect, useState } from 'react';
 import './ActivitiesChartContainer.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ActivitiesChart from './ActivitiesChart/ActivitiesChart';
+import UserInfoCart from './ActivitiesCart/UserInfoCart';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  } from '@fortawesome/free-solid-svg-icons'
-import UserInfoCart from './ActivitiesCart/UserInfoCart';
+import { } from '@fortawesome/free-solid-svg-icons'
 
 
 
-const ActivitiesChartContainer = () => {
+
+const ActivitiesChartContainer = ({ newCart, chart }) => {
     const [allChart, setChart] = useState([]);
     const [cart, setCart] = useState([]);
     useEffect(() => {
         fetch('generated.json')
             .then(res => res.json())
             .then(data => setChart(data))
+        // console.log(allChart);
+
     }, [])
-    // console.log(allChart);
+    
     const handleAddToCartClick = (chart) => {
-        // console.log(chart);
         const newCart = [...cart, chart];
         setCart(newCart);
+        console.log(newCart);
     };
     return (
         <div className='container'>
@@ -37,8 +40,12 @@ const ActivitiesChartContainer = () => {
                         }
                     </div>
                 </div>
+                {/* cart  */}
                 <div className="activities-cart-container col-3 bg-info">
-                        <UserInfoCart cart={cart}></UserInfoCart>
+                    <UserInfoCart
+                        newCart={newCart}
+                        chart={chart}
+                    ></UserInfoCart>
                 </div>
             </div>
         </div>

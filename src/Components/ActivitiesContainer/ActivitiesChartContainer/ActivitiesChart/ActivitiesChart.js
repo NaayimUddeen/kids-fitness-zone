@@ -5,11 +5,11 @@ import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
+
+
 const ActivitiesChart = ({ chart, handleAddToCartClick }) => {
     const { picture, age, name, about1, Time_Required } = chart;
-    // console.log(props);
-
-
+    // console.log(chart);
 
     return (
         <div className='chart  '>
