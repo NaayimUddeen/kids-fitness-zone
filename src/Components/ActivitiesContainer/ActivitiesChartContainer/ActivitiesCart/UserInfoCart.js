@@ -2,8 +2,18 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './UserInfoCart.css'
 import userPic from '../../../../img/user pic.jpg'
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+
 
 const UserInfoCart = ({ cart }) => {
+    console.log(cart);
+    
+    let total = 0;
+    for (const newCart of cart) {
+        total = total + cart.Time_Required;
+    }
     return (
         <div className="cart-contain">
             <div className='mt-4 d-flex align-items-center justify-content-center'>
@@ -45,7 +55,15 @@ const UserInfoCart = ({ cart }) => {
                 <p className='fw-bold '>Take Rest Time :<span className='text-bg-warning'>Exercise Details-</span></p>
                 <p className='fw-bold '>Exercise Time :<span className='text-bg-warning'>Exercise Details-</span></p>
             </div>
-
+            <div className='d-grid'>
+                <button
+                    // onClick={() => handleAddToCartClick(chart)}
+                    className="btn-car btn btn-success w-4 d-flex align-items-center justify-content-center"
+                >
+                    <p className="px-3 fw-bolder pt-2 btn-tex">Target Completed</p>
+                    <FontAwesomeIcon icon={faThumbsUp}></FontAwesomeIcon>
+                </button>
+            </div>
         </div>
     );
 };

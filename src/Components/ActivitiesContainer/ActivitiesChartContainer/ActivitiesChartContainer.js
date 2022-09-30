@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './ActivitiesChartContainer.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ActivitiesChart from './ActivitiesChart/ActivitiesChart';
-// import { ReactDOM } from 'react';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import {  } from '@fortawesome/free-solid-svg-icons'
 import UserInfoCart from './ActivitiesCart/UserInfoCart';
 
 
@@ -20,7 +19,7 @@ const ActivitiesChartContainer = () => {
     }, [])
     // console.log(allChart);
     const handleAddToCartClick = (chart) => {
-        console.log(chart);
+        // console.log(chart);
         const newCart = [...cart, chart];
         setCart(newCart);
     };
@@ -38,7 +37,7 @@ const ActivitiesChartContainer = () => {
                         }
                     </div>
                 </div>
-                <div className="activities-cart-contain col-3 bg-info">
+                <div className="activities-cart-container col-3 bg-info">
                         <UserInfoCart cart={cart}></UserInfoCart>
                 </div>
             </div>

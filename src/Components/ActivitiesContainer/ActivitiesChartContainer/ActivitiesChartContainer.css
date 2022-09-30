@@ -10,6 +10,10 @@
     margin: 20px;
     margin-bottom: 10px; */
 }
+.activities-cart-container{
+    height: 650px;
+    border-radius: 15px;
+}
 /* @media only screen and (max-width:600px){
     .products-chart-container{
         grid-template-columns: repeat(1, 1fr);
